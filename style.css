@@ -2,11 +2,11 @@
 body, html {
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
+  font-family: cursive;
+  box-sizing: border-box;
 }
 
-/* Navbar responsivo */
+/* Barra de navegación */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,6 @@ body, html {
   padding: 20px;
   background: rgba(255, 247, 247, 0.74);
   position: relative;
-  width: 100%;
 }
 
 /* Logo centrado */
@@ -27,13 +26,13 @@ body, html {
 .logoEmpresa {
   width: 150px;
   height: auto;
+  object-fit: contain;
 }
 
-/* Ajuste para iconos en la barra de navegación */
+/* Iconos */
 .left-icons, .right-icons {
   display: flex;
-  gap: 10px;
-  align-items: center;
+  gap: 15px;
 }
 
 .imagenCompras {
@@ -46,54 +45,71 @@ body, html {
   transform: scale(1.1);
 }
 
-/* 🔹 Menú de navegación */
+/* Menú hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 .menuBar {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
   background: rgba(255, 247, 247, 0.74);
-  font-size: 15px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 50px;
+  gap: 40px;
   padding: 0;
   margin: 0;
-  flex-wrap: wrap;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #000;
   font-weight: bold;
-  position: relative;
-  padding-bottom: 5px; 
   transition: all 0.3s ease;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: #000;
-  transition: width 0.3s ease;
+.nav-links a:hover {
+  text-decoration: underline;
 }
 
-.nav-links a:hover::after {
-  width: 100%;
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menuBar {
+    display: none;
+    flex-direction: column;
+    background: rgba(255, 247, 247, 0.9);
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  .menuBar.active {
+    display: flex;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
-/* 🔹 Sección hero */
+/* Hero section */
 .hero-section {
   position: relative;
   width: 100%;
-  max-height: 600px;
+  max-height: 700px;
   overflow: hidden;
 }
 
@@ -117,17 +133,18 @@ body, html {
   padding: 5px 0;
 }
 
-/* 🔹 Catálogo */
+/* Catálogo */
 .catalogo {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px;
 }
 
 .producto {
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   border-radius: 8px;
   overflow: hidden;
   font-size: 15px;
@@ -139,7 +156,7 @@ body, html {
   display: block;
 }
 
-/* 🔹 Pie de página */
+/* Footer */
 .inferioridad {
   display: flex;
   justify-content: center;
@@ -147,7 +164,6 @@ body, html {
   background: #000;
   padding: 20px;
   margin-top: 30px;
-  width: 100%;
 }
 
 .inferior {
@@ -155,7 +171,7 @@ body, html {
   margin: 0;
 }
 
-/* 🔹 Texto envío */
+/* Texto envío */
 .Envio {
   display: block;
   text-align: center;
@@ -163,75 +179,6 @@ body, html {
   background: #f8f8f8;
 }
 
-/* 🔹 Estilos Responsivos */
-@media screen and (max-width: 1024px) {
-  .nav-links {
-    gap: 20px;
-    font-size: 14px;
-  }
-
-  .logoEmpresa {
-    width: 130px;
-  }
-
-  .catalogo {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-  }
-
-  .logo {
-    position: static;
-    transform: none;
-    margin-bottom: 10px;
-  }
-
-  .menuBar {
-    height: auto;
-    padding: 10px;
-  }
-
-  .nav-links {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .catalogo {
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 10px;
-  }
-
-  .producto {
-    max-width: 300px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .navbar {
-    padding: 10px;
-  }
-
-  .logoEmpresa {
-    width: 100px;
-  }
-
-  .nav-links {
-    font-size: 12px;
-  }
-
-  .catalogo {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  }
-
-  .producto {
-    max-width: 250px;
-  }
+.textoProducto {
+  padding: 10px;
 }
