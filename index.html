@@ -8,18 +8,15 @@
 </head>
 <body>
     <nav class="navbar">
-        <!-- Icono izquierda (lupa) -->
         <div class="left-icons">
             <a href="#">
                 <img src="imagenes/lupa.png" alt="Buscar" class="imagenCompras">
             </a>
         </div>
-    
-    
+        
         <div class="logo">
             <img src="imagenes/logo.png" alt="logo" class="logoEmpresa">
         </div>
-    
         
         <div class="right-icons">
             <a href="/login/index.html">
@@ -29,9 +26,11 @@
                 <img src="imagenes/carritoCompras.png" alt="Carrito" class="imagenCompras">
             </a>
         </div>
+        
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     </nav>
 
-    <div class="menuBar"> 
+    <div class="menuBar" id="menuBar"> 
         <ul class="nav-links">
             <li><a href="/Inicio/index.html">INICIO</a></li>
             <li><a href="#">HOMBRE</a></li>
@@ -39,7 +38,6 @@
             <li><a href="#">ACCESORIOS</a></li>
             <li><a href="#">SET DEPORTIVO</a></li>
             <li><a href="#">PRENDAS</a></li>
-            
         </ul>
     </div>
 
@@ -57,46 +55,14 @@
 
     <div class="catalogo">
         <div class="producto">
-           
-            <a href="#"><img src="imagenes/slide3.jfif" alt="Producto 1"></a>  
-            <div class="textoProducto">
-            <h2>Conjunto deportivo mujer  </h2>
-         
-            <p>L 690.00
-              
-                </p>
-           </div>
+            <img src="imagenes/slide3.jfif" alt="Producto 1">
+            <h2>Conjunto deportivo mujer</h2>
+            <p>L 690.00</p>
         </div>
         <div class="producto">
             <img src="imagenes/slide2.jpg" alt="Producto 2">
-        </div>
-
-        <div class="producto">
-            <a href="#"><img src="imagenes/slide3.jfif" alt="Producto 1"></a>   
-            
-        </div>
-        <div class="producto">
-            <img src="imagenes/slide2.jpg" alt="Producto 2">
-        </div>
-
-        <div class="producto">
-            <a href="#"><img src="imagenes/slide3.jfif" alt="Producto 1"></a>  
-        </div>
-        <div class="producto">
-            <img src="imagenes/slide2.jpg" alt="Producto 2">
-        </div>
-
-        <div class="producto">
-            <a href="#"><img src="imagenes/slide3.jfif" alt="Producto 1"></a>  
-        </div>
-        <div class="producto">
-            <img src="imagenes/slide2.jpg" alt="Producto 2">
-        </div>
-        <div class="producto">
-            <a href="#"><img src="imagenes/slide3.jfif" alt="Producto 1"></a>  
-        </div>
-        <div class="producto">
-            <img src="imagenes/slide2.jpg" alt="Producto 2">
+            <h2>Conjunto deportivo mujer</h2>
+            <p>L 690.00</p>
         </div>
     </div>
 
@@ -104,6 +70,10 @@
         <p class="inferior">Desarrollado por Jorge Espinal</p>
     </div>
 
-    <script src="logica.js"></script>
+    <script>
+        function toggleMenu() {
+            document.getElementById("menuBar").classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
