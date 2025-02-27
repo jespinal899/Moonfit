@@ -11,12 +11,12 @@ body, html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 15px 20px;
   background: rgba(255, 247, 247, 0.74);
   position: relative;
 }
 
-/* Logo centrado */
+/* Logo centrado sin afectar iconos laterales */
 .logo {
   position: absolute;
   left: 50%;
@@ -24,15 +24,17 @@ body, html {
 }
 
 .logoEmpresa {
-  width: 150px;
+  width: 120px;
   height: auto;
   object-fit: contain;
 }
 
-/* Iconos */
+/* Contenedores de iconos */
 .left-icons, .right-icons {
   display: flex;
+  align-items: center;
   gap: 15px;
+  width: 120px;
 }
 
 .imagenCompras {
@@ -83,6 +85,9 @@ body, html {
 @media screen and (max-width: 768px) {
   .menu-toggle {
     display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
   }
 
   .menuBar {
@@ -102,6 +107,17 @@ body, html {
   .nav-links {
     flex-direction: column;
     text-align: center;
+  }
+
+  /* Asegurar que los iconos no se agrupen */
+  .left-icons, .right-icons {
+    width: auto;
+  }
+
+  .logo {
+    position: relative;
+    left: auto;
+    transform: none;
   }
 }
 
