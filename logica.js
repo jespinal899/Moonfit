@@ -4,7 +4,7 @@ function toggleMenu() {
     document.getElementById("menuBar").classList.toggle("active");
 }
 
-const imagenes = ["imagenes/set1.png", "imagenes/set2.png", "imagenes/set3.png"];
+const imagenes = ["imagenes/set1.PNG", "imagenes/set2.PNG", "imagenes/set3.PNG"];
 let indice = 0;
 
 function cambiarImagen(direccion) {
